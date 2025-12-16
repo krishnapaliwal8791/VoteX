@@ -31,7 +31,7 @@ int main()
     verans = data.substr(i2, i3 - i2);
     i2 = i3 + 11;
     dynamicpin = data.substr(i2, len - i2);
-    ifstream fin("Institute_login_data.txt");
+    ifstream fin("C://xampp/VoteX_Private/Database/Institute_login_data.txt");
     string idf, passf, seckeyf, veransf, dynamicpinf;
     getline(fin, idf);
     getline(fin, passf);
@@ -54,7 +54,7 @@ int main()
                         cout << "Set-Cookie: SESSION_ID=" << session << "; Path=/; HttpOnly\r\n";
                         cout << "\r\n";
                         // 2. Saving Cookie on server
-                        ofstream fout("Institute_Sessions.txt", ios::trunc);
+                        ofstream fout("C://xampp/VoteX_Private/Database/Institute_Sessions.txt", ios::trunc);
                         fout << session << "\n";
                         fout.close();
                         // 3. To Genrate the Dynamic pin
@@ -213,7 +213,7 @@ int Dynamic_Pin_Genrator()
 
 void Dynamic_Pin_updater_in_database(string idf, string passf, string seckeyf, string veransf, int dynamic_pin)
 {
-    ofstream fout("Institute_login_data.txt", ios::trunc);
+    ofstream fout("C://xampp/VoteX_Private/Database/Institute_login_data.txt", ios::trunc);
     fout << idf << "\n"
          << passf << "\n"
          << seckeyf << "\n"

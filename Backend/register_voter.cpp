@@ -61,7 +61,7 @@ int main(){
     i3=len;
     sa=data.substr(i2,i3-i2);
     // We parsed the data Now we are writting in the file
-    ofstream fout("voter_registered_verification_remaining.txt",ios::app);
+    ofstream fout("C://xampp/VoteX_Private/Database/voter_registered_verification_remaining.txt",ios::app);
     // string fn,mn,ln,mail,pass,enroll,dep,br,yr,ph,sq,sa;
     fout<<fn<<"|"<<mn<<"|"<<ln<<"|"<<mail<<"|"<<pass<<"|"<<enroll<<"|"<<dep<<"|"<<br<<"|"<<yr<<"|"<<ph<<"|"<<sq<<"|"<<sa<<"|\n";
     fout.close();
