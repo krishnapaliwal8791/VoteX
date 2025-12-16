@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VoteX — The Next-Gen Voting Platform</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --panel:#020617;
+  --border:#1e293b;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+  --accent2:#a78bfa;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body{
+  background:
+    radial-gradient(circle at 20% 10%, #0f172a, transparent 40%),
+    radial-gradient(circle at 80% 40%, #1e1b4b, transparent 45%),
+    var(--bg);
+  color:#e5e7eb;
+}
+
+/* ===== ANNOUNCEMENT ===== */
+.announce{
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+  font-weight:600;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#020617;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:relative;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(10px);
+  background:rgba(2,6,23,.85);
+  border-bottom:1px solid var(--border);
+  padding:16px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+nav a{
+  margin-left:26px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:14px;
+}
+nav a:hover{color:var(--accent);}
+
+/* ===== FLOATING INSTITUTE BUTTON (ONLY ADDITION) ===== */
+.institute-float{
+  position:absolute;
+  right:48px;
+  top:100%;
+  margin-top:12px;
+}
+
+.institute-float a{
+  padding:8px 18px;
+  font-size:13px;
+  font-weight:600;
+  border-radius:999px;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  background:rgba(2,6,23,.9);
+  text-decoration:none;
+}
+
+.institute-float a:hover{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#020617;
+}
+
+/* ===== SECTIONS BASE ===== */
+section{
+  padding:90px 48px;
+}
+
+.section-title{
+  font-size:46px;
+  font-weight:900;
+}
+.section-sub{
+  margin-top:14px;
+  color:var(--muted);
+  max-width:820px;
+  line-height:1.7;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:100px 48px 70px;
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:60px;
+}
+
+.hero h1{
+  font-size:72px;
+  font-weight:900;
+  line-height:1.02;
+}
+.hero span{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:22px;
+  font-size:19px;
+  color:var(--muted);
+}
+
+.hero-actions{
+  margin-top:40px;
+}
+.hero-actions a{
+  padding:16px 40px;
+  border-radius:999px;
+  margin-right:18px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.btn-main{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#020617;
+  box-shadow:0 0 40px rgba(34,211,238,.4);
+}
+.btn-outline{
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+
+/* ===== FLOAT CARD ===== */
+.float-card{
+  padding:36px;
+  border-radius:22px;
+  border:1px solid var(--border);
+  background:rgba(2,6,23,.9);
+  box-shadow:0 0 80px rgba(167,139,250,.2);
+}
+
+/* ===== METRICS ===== */
+.metrics{
+  padding:70px 48px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+.metric{
+  text-align:center;
+  padding:32px;
+  border-radius:22px;
+  border:1px solid var(--border);
+}
+.metric h2{
+  font-size:42px;
+  color:var(--accent);
+}
+
+/* ===== FEATURES ===== */
+.features{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.feature{
+  padding:30px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:rgba(2,6,23,.85);
+}
+.feature h3{color:var(--accent);}
+
+/* ===== FLOW ===== */
+.timeline{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.step{
+  padding:26px;
+  border-left:4px solid var(--accent);
+  background:rgba(2,6,23,.9);
+}
+
+/* ===== CONTACT ===== */
+.contact-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:40px;
+}
+
+input,textarea{
+  width:100%;
+  padding:13px;
+  margin-bottom:12px;
+  border-radius:12px;
+  background:#020617;
+  border:1px solid var(--border);
+  color:#e5e7eb;
+}
+button{
+  padding:14px 34px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  font-weight:700;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:40px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  color:#64748b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero,.metrics,.features,.timeline,.contact-grid{
+    grid-template-columns:1fr;
+  }
+  .hero h1{font-size:48px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="announce">
+🚀 VoteX is a skill-first system — not a demo, not a tutorial.
+</div>
+
+<nav>
+  <div class="logo">VoteX</div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+    <a href="choose_role_login.html">Login</a>
+  </div>
+
+  <!-- ONLY NEW ELEMENT -->
+  <div class="institute-float">
+    <a href="institute_login.html">Institute</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Vote<span>X</span><br>Not a Page.<br>A Platform.</h1>
+    <p>
+      VoteX is built to understand how real-world voting systems work —
+      authentication, validation, storage and results.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-main" href="choose_role_register.html">Get Started</a>
+      <a class="btn-outline" href="#about">Learn More</a>
+    </div>
+  </div>
+
+  <div class="float-card">
+    <h3>Why VoteX?</h3>
+    <p>
+      To move beyond UI cloning and actually build
+      a system with logic and constraints.
+    </p>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric"><h2>1</h2><p>User → One Vote</p></div>
+  <div class="metric"><h2>0</h2><p>Frameworks</p></div>
+  <div class="metric"><h2>100%</h2><p>Logic</p></div>
+  <div class="metric"><h2>∞</h2><p>Learning</p></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About VoteX</h2>
+  <p class="section-sub">
+    VoteX is a self-built project created for skill enhancement.
+    The goal is to understand how a voting system behaves end-to-end —
+    from frontend interaction to backend validation and result computation.
+  </p>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <h2 class="section-title">Core Features</h2>
+  <p class="section-sub">
+    These are not buzzwords — these are implemented concepts.
+  </p>
+
+  <div class="features">
+    <div class="feature"><h3>Authentication Flow</h3><p>Register, login & validation</p></div>
+    <div class="feature"><h3>Vote Integrity</h3><p>One user → one vote</p></div>
+    <div class="feature"><h3>File Storage</h3><p>Persistent data via files</p></div>
+    <div class="feature"><h3>CGI + C++</h3><p>Low-level backend logic</p></div>
+    <div class="feature"><h3>Result Engine</h3><p>Transparent vote count</p></div>
+    <div class="feature"><h3>Scalable Design</h3><p>DB / API ready</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-grid">
+    <p class="section-sub">
+      Feedback, ideas or improvements?
+      VoteX evolves by building and experimenting.
+    </p>
+
+    <form>
+      <input placeholder="Your Name">
+      <input placeholder="Your Email">
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button>Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 VoteX — The Next-Gen Voting Platform
+</footer>
+
+</body>
+</html>

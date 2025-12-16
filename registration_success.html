@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VoteX | Registration Successful</title>
+
+  <style>
+    :root{
+      --bg:#020617;
+      --border:#1e293b;
+      --muted:#94a3b8;
+      --accent:#22d3ee;
+      --accent2:#a78bfa;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 20% 10%, #0f172a, transparent 40%),
+        radial-gradient(circle at 80% 40%, #1e1b4b, transparent 45%),
+        var(--bg);
+      color:#e5e7eb;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      padding:18px 48px;
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== MAIN ===== */
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .card{
+      background: rgba(2,6,23,0.85);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:40px 45px;
+      max-width:420px;
+      width:90%;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);
+    }
+
+    .icon{
+      font-size:52px;
+      color:var(--accent);
+      margin-bottom:15px;
+    }
+
+    h2{
+      font-size:26px;
+      margin-bottom:10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p{
+      font-size:15px;
+      color:var(--muted);
+      margin:8px 0;
+      line-height:1.5;
+    }
+
+    .note{
+      margin-top:18px;
+      font-size:14px;
+      color:#c7d2fe;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:12px 26px;
+      border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#020617;
+      font-weight:600;
+      text-decoration:none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow:0 6px 20px rgba(34,211,238,0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">VoteX</div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="card">
+      <div class="icon">✔</div>
+
+      <h2>Registration Successful</h2>
+
+      <p>Your details have been saved successfully.</p>
+      <p>We will contact you soon for verification.</p>
+
+      <div class="note">
+        Please keep checking your registered email.
+      </div>
+
+      <a href="/VoteX/index.html" class="btn">Go to Home</a>
+    </div>
+  </main>
+
+</body>
+</html>

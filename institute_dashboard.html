@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Institute Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="institute_dashboard.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">VoteX · Institute Panel</div>
+    <div class="admin-info">
+        <span>Institute Authority</span>
+        <a href="/cgi-bin/logout.cgi" class="logout-btn">Logout</a>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li class="active">Institute Dashboard</li>
+            <li>Add Admin</li>
+            <li>Remove Admin</li>
+            <li>Admin List</li>
+            <li>Confidential Settings</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <h1>Institute Dashboard</h1>
+        <p class="welcome-text">
+            Manage institute-level authorities and confidential access.
+        </p>
+
+        <!-- Dynamic PIN Section -->
+        <div class="daily-pin-box">
+            <div class="pin-title">Entry Security PIN</div>
+            <div class="pin-value">
+                <!-- Backend prints PIN here -->
+                482917
+            </div>
+            <div class="pin-note">
+                This PIN is valid for next entry and must remain confidential.
+            </div>
+        </div>
+
+        <!-- Action Cards -->
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Add Admin</h3>
+                <p>Authorize a new administrator for system operations.</p>
+                <form action="/cgi-bin/add_admin.cgi" method="post">
+                    <button>Add Admin</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Remove Admin</h3>
+                <p>Revoke an existing administrator’s access.</p>
+                <form action="/cgi-bin/remove_admin.cgi" method="post">
+                    <button class="danger">Remove Admin</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Admin List</h3>
+                <p>View all authorized administrators.</p>
+                <form action="/cgi-bin/admin_list.cgi" method="get">
+                    <button>View List</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Confidential Settings</h3>
+                <p>Manage sensitive institute-level configurations.</p>
+                <form action="/cgi-bin/confidential.cgi" method="post">
+                    <button>Access</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

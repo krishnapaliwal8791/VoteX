@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VoteX | Institute Access Denied</title>
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:#020617;
+      --border:#1e293b;
+      --danger:#ef4444;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:
+        radial-gradient(circle at 20% 10%, #0f172a, transparent 40%),
+        radial-gradient(circle at 80% 40%, #1e1b4b, transparent 45%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .card{
+      width:420px;
+      border:1px solid var(--border);
+      padding:36px;
+      background:rgba(2,6,23,0.85);
+      backdrop-filter: blur(10px);
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 0 40px rgba(0,0,0,0.4);
+    }
+
+    .icon{
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:rgba(239,68,68,0.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 18px;
+      color:var(--danger);
+      font-size:32px;
+      font-weight:700;
+    }
+
+    h1{
+      font-size:20px;
+      margin-bottom:10px;
+      letter-spacing:0.4px;
+    }
+
+    p{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.6;
+      margin-bottom:24px;
+    }
+
+    .alert{
+      border:1px solid rgba(239,68,68,0.35);
+      background:rgba(239,68,68,0.08);
+      color:#fecaca;
+      padding:12px;
+      border-radius:8px;
+      font-size:13px;
+      margin-bottom:26px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      color:#fff;
+      font-size:14px;
+      background:#1e293b;
+      border:1px solid var(--border);
+      transition:0.2s;
+    }
+
+    .btn:hover{
+      background:#334155;
+    }
+
+    .footer{
+      margin-top:18px;
+      font-size:12px;
+      color:#64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="icon">!</div>
+
+    <h1>Institute Access Denied</h1>
+
+    <p>
+      The credentials you entered do not match any authorized
+      institute records.
+      <br>
+      or<br> Current Session is Expired kindly login again
+    </p>
+
+    <div class="alert">
+      Authentication failed.
+    </div>
+
+    <a href="institute_login.html" class="btn">
+      Return to Institute Login
+    </a>
+
+    <div class="footer">
+      VoteX Institute Panel • Secure Authentication System
+    </div>
+
+  </div>
+
+</body>
+</html>

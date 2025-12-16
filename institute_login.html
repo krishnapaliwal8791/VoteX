@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Institute Administration Login | VoteX</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --panel:#020617;
+  --border:#1e293b;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+  --danger:#f87171;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 10%, #0f172a, transparent 40%),
+    radial-gradient(circle at 80% 40%, #1e1b4b, transparent 45%),
+    var(--bg);
+  color:#e5e7eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ===== CONTAINER ===== */
+.admin-shell{
+  width:520px;
+  border:1px solid var(--border);
+  background:rgba(2,6,23,.97);
+  box-shadow:0 0 100px rgba(0,0,0,.6);
+}
+
+/* ===== HEADER ===== */
+.admin-header{
+  padding:18px 22px;
+  border-bottom:1px solid var(--border);
+  background:#020617;
+}
+
+.admin-header h1{
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.admin-header span{
+  display:block;
+  margin-top:4px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ===== WARNING ===== */
+.admin-warning{
+  padding:14px 22px;
+  border-bottom:1px solid var(--border);
+  background:rgba(248,113,113,.08);
+  color:#fecaca;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* ===== BODY ===== */
+.admin-body{
+  padding:26px 22px 30px;
+}
+
+.section-title{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:14px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* ===== FORM ===== */
+label{
+  font-size:13px;
+  color:var(--muted);
+}
+
+input{
+  width:100%;
+  padding:13px;
+  margin:8px 0 16px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#020617;
+  color:#e5e7eb;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+input:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+
+/* ===== BUTTON ===== */
+button{
+  width:100%;
+  padding:14px;
+  margin-top:8px;
+  border-radius:6px;
+  border:1px solid var(--accent);
+  background:#020617;
+  color:var(--accent);
+  font-weight:700;
+  cursor:pointer;
+}
+
+button:hover{
+  background:var(--accent);
+  color:#020617;
+}
+
+/* ===== FOOT INFO ===== */
+.admin-footer{
+  padding:16px 22px;
+  border-top:1px solid var(--border);
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.admin-footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="admin-shell">
+
+  <!-- HEADER -->
+  <div class="admin-header">
+    <h1>VoteX — Institute Administration</h1>
+    <span>Secure Institutional Access Portal</span>
+  </div>
+
+  <!-- WARNING -->
+  <div class="admin-warning">
+    ⚠ This system is restricted to authorized institutional administrators only.
+    All access attempts are logged, monitored, and subject to audit.
+  </div>
+
+  <!-- BODY -->
+  <div class="admin-body">
+
+    <div class="section-title">Primary Credentials</div>
+
+    <form action="/cgi-bin/VoteX/institute_login.cgi" method="post">
+
+      <label>Institute Identifier</label>
+      <input type="text" name="institute_id" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <div class="section-title">Secondary Verification</div>
+
+      <label>Institute Secret Key</label>
+      <input type="password" name="secret_key" required>
+
+      <label>Security Verification Answer</label>
+      <input type="text" name="security_answer" required>
+
+      <label>Dynamic Administrative PIN</label>
+      <input type="password" name="daily_pin" required>
+
+      <button type="submit">Authenticate Administrator</button>
+    </form>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="admin-footer">
+    Institute onboarding is performed manually.<br>
+    For registration or access issues, use the
+    <a href="index.html#contact">official contact channel</a>.
+  </div>
+
+</div>
+
+</body>
+</html>

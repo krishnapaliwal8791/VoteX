@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VoteX | Choose Your Role</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --border:#1e293b;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+  --accent2:#a78bfa;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 10%, #0f172a, transparent 40%),
+    radial-gradient(circle at 80% 40%, #1e1b4b, transparent 45%),
+    var(--bg);
+  color:#e5e7eb;
+}
+
+/* ===== NAV ===== */
+nav{
+  padding:18px 48px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ===== MAIN ===== */
+.main{
+  padding:80px 48px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.main h1{
+  font-size:54px;
+  font-weight:900;
+}
+
+.main p{
+  margin-top:16px;
+  color:var(--muted);
+  max-width:700px;
+  font-size:17px;
+}
+
+/* ===== ROLE GRID ===== */
+.roles{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.role{
+  padding:40px 30px;
+  border-radius:22px;
+  border:1px solid var(--border);
+  background:rgba(2,6,23,.85);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.role:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 50px rgba(34,211,238,.15);
+}
+
+.role h2{
+  color:var(--accent);
+  margin-bottom:10px;
+  font-size:26px;
+}
+
+.role p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid var(--border);
+  color:#64748b;
+  font-size:13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .roles{
+    grid-template-columns:1fr;
+  }
+  .main h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">VoteX</div>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="main">
+  <h1>Choose Your Role</h1>
+  <p>
+    Select how you want to participate in the VoteX platform.
+    Each role has different permissions and responsibilities.
+  </p>
+
+  <div class="roles">
+
+    <!-- VOTER -->
+    <a href="login_voter.html" class="role">
+      <h2>🧑‍💼 Voter</h2>
+      <p>
+        Login as a voter to securely cast your vote and
+        view election results.
+      </p>
+    </a>
+
+    <!-- CANDIDATE -->
+    <a href="login_candidate.html" class="role">
+      <h2>🧑‍🎤 Candidate</h2>
+      <p>
+        Login as a candidate to contest elections
+        and receive votes.
+      </p>
+    </a>
+
+    <!-- ADMIN -->
+    <a href="login_admin.html" class="role">
+      <h2>🛠 Admin</h2>
+      <p>
+        Administrative role to manage elections,
+        candidates, and results.
+      </p>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  © 2025 VoteX — The Next-Gen Voting Platform
+</footer>
+
+</body>
+</html>
