@@ -67,11 +67,182 @@ int main()
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Institute Dashboard</title>
+<meta charset="UTF-8">
+<title>VoteX · Institute Dashboard</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="\VoteX\institute_dashboard.css">
+<style>
+/* ================= BASE ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    color:#e5e7eb;
+    background:
+        radial-gradient(900px 400px at 15% 10%, #0b1220 0%, transparent 60%),
+        radial-gradient(700px 300px at 85% 30%, #0a1733 0%, transparent 55%),
+        linear-gradient(180deg, #020617 0%, #020617 100%);
+}
+
+/* ================= TOPBAR ================= */
+.topbar{
+    height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
+    border-bottom:1px solid rgba(148,163,184,0.12);
+    background:linear-gradient(180deg,#020617,#020617);
+}
+
+.logo{
+    font-size:18px;
+    font-weight:600;
+    color:#38bdf8;
+}
+
+.admin-info{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    font-size:14px;
+}
+
+.logout-btn{
+    color:#ef4444;
+    text-decoration:none;
+}
+
+/* ================= LAYOUT ================= */
+.layout{
+    display:flex;
+    min-height:calc(100vh - 64px);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+    width:240px;
+    padding:20px;
+    border-right:1px solid rgba(148,163,184,0.12);
+    background:linear-gradient(180deg,#020617,#020617);
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:12px 14px;
+    margin-bottom:6px;
+    border-radius:8px;
+    font-size:14px;
+    color:#cbd5f5;
+}
+
+.sidebar li.active{
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+    color:#020617;
+    font-weight:600;
+}
+
+/* ================= CONTENT ================= */
+.content{
+    flex:1;
+    padding:36px;
+}
+
+.content h1{
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.welcome-text{
+    font-size:14px;
+    color:#94a3b8;
+    margin-bottom:28px;
+}
+
+/* ================= PIN CARD ================= */
+.daily-pin-box{
+    width:420px;
+    padding:20px;
+    border-radius:14px;
+    margin-bottom:36px;
+    background:
+        linear-gradient(180deg,rgba(56,189,248,0.08),rgba(2,6,23,0)),
+        #020617;
+    border:1px solid rgba(56,189,248,0.25);
+    box-shadow:0 0 0 1px rgba(56,189,248,0.08);
+}
+
+.pin-title{
+    font-size:14px;
+    color:#94a3b8;
+}
+
+.pin-value{
+    margin:8px 0;
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:4px;
+    color:#38bdf8;
+}
+
+.pin-note{
+    font-size:12px;
+    color:#94a3b8;
+}
+
+/* ================= CARDS ================= */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
+
+.card{
+    padding:22px;
+    border-radius:16px;
+    background:
+        linear-gradient(180deg,rgba(148,163,184,0.06),rgba(2,6,23,0)),
+        #020617;
+    border:1px solid rgba(148,163,184,0.18);
+    box-shadow:
+        0 0 0 1px rgba(148,163,184,0.05),
+        0 20px 40px rgba(0,0,0,0.45);
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.card p{
+    font-size:13px;
+    color:#94a3b8;
+    margin-bottom:16px;
+}
+
+.card button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    color:#020617;
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.card button.danger{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+</style>
 </head>
 
 <body>
@@ -105,13 +276,11 @@ int main()
             Manage institute-level authorities and confidential access.
         </p>
 
-        <!-- Dynamic PIN Section -->
+        <!-- Dynamic PIN -->
         <div class="daily-pin-box">
             <div class="pin-title">Entry Security PIN</div>
-            <div class="pin-value">
-                <!-- Backend prints PIN here -->
-                )VoteX" << genrated_dynamic_pin
-                             << R"VoteX(            </div>
+            <div class="pin-value">)VoteX" << genrated_dynamic_pin
+            << R"VoteX(</div>
             <div class="pin-note">
                 This PIN is valid for next entry and must remain confidential.
             </div>
