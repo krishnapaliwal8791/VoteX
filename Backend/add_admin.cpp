@@ -19,7 +19,7 @@ int main(){
     }
     size_t i2=i1+11;
     string cookie=cooki.substr(i2,32),cookief;
-    ifstream fin("Institute_Sessions.txt");
+    ifstream fin("C://xampp/VoteX_Private/Database/Institute_Sessions.txt");
     getline(fin,cookief);
     if(cookie!=cookief){
         cout << "Status: 302 Found\r\n";
@@ -29,25 +29,14 @@ int main(){
     cout << "Content-Type: text/html; charset=UTF-8\r\n";
     cout << "Set-Cookie: SESSION_ID=" << cookief << "; Path=/; HttpOnly\r\n";
     cout << "\r\n";
-    string addadminhtmlpge1="",addadminhtmlpge2="",temp;
-    ifstream finaddadminhtmlpage1("add_admin_html_page_1.txt");
-    while(getline(finaddadminhtmlpage1,temp)){
-        addadminhtmlpge1+=temp;
-        addadminhtmlpge1+="\n";
-    }
-    finaddadminhtmlpage1.close();
-    ifstream finaddadminhtmlpage2("add_admin_html_page_2.txt");
-    while(getline(finaddadminhtmlpage2,temp)){
-        addadminhtmlpge2+=temp;
-        addadminhtmlpge2+="\n";
+    ifstream fin_add_admin_page("C://xampp/VoteX_Private/Templates/add_admin_details_page.txt");
+    string html,temp;
+    while(getline(fin_add_admin_page,temp)){
+        html+=temp;
+        html+="\n";
         temp.clear();
     }
-    ifstream findynamicpin("Institute_login_data.txt");
-    for(int i=0;i<5;i++){
-        getline(findynamicpin,temp);
-    }
-    if(!temp.empty()&&temp.back()=="/r") temp.pop_back();
-    string finalprint=addadminhtmlpge1+temp+"\n"+addadminhtmlpge2;
-    cout<<finalprint;
-    return 0;
+    fin_add_admin_page.close();
+    cout<<html;
+    return 0;                      
 }
