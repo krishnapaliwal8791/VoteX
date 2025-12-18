@@ -178,6 +178,11 @@
         </div>
 
         <div>
+          <label>Phone</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <div>
           <label>First Time Password</label>
           <input type="password" name="oldpassword" placeholder="Enter Password provided by Administration" required>
         </div>
@@ -196,6 +201,21 @@
             <option value="verification">Verification Admin</option>
           </select>
         </div>
+
+    <div>
+      <label>Security Question</label>
+      <select name="security_q" required>
+        <option value="" selected disabled>Security Question</option>
+        <option value="sq1">What is your favourite color?</option>
+        <option value="sq2">What is your birth city?</option>
+        <option value="sq3">What is your pet name?</option>
+      </select>
+    </div>
+
+    <div class="full">
+      <label>Security Answer</label>
+      <input type="text" name="security_a">
+    </div>
 
         <div class="warning">
           ⚠ Admin access allows control over elections and voter verification.  
