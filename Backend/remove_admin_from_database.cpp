@@ -7,7 +7,7 @@
 using namespace std;
 int main()
 {
-    cout << "Content-Type: text/html; charset=UTF-8\r\n";
+    cout << "Content-Type: text/html; charset=UTF-8\r\n\r\n";
     size_t len = atoi(getenv("CONTENT_LENGTH"));
     string data, position, id;
     data.resize(len);
