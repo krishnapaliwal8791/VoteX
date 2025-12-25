@@ -30,25 +30,19 @@ int main()
     {
         fin_admin_database.open("C://xampp/VoteX_Private/Database/Verification_admin_database.csv");
     }
-    vector<string> whole_database;
-    string firstline,secondline,idf;
-    getline(fin_admin_database, firstline);
-    getline(fin_admin_database, secondline);
-    stringstream ss(data);
-    int i=-1,inde=-1;
-    size_t found;
-    while (getline(fin_admin_database, data))
-    {
-        whole_database.push_back(data);
+    string firstline,secondline,line,idf;
+    vector<string> database;
+    int lineno=-1,i=-1;
+    getline(fin_admin_database,firstline);
+    getline(fin_admin_database,secondline);
+    while(getline(fin_admin_database,line)){
         i++;
-        getline(ss,idf,',');
-        if(idf==id){
-            inde=i;
-        }
+        stringstream ssline(line);
+        getline(ssline,idf,',');
+        if(idf==id) lineno=i;
+        database.push_back(line);
     }
-    fin_admin_database.close();
-    if (inde==-1)
-    {
+    if(lineno==-1){
         cout << R"VoteX(
         <!DOCTYPE html>
 <html lang="en">
@@ -179,10 +173,9 @@ p{
         fout_admin_database.open("C://xampp/VoteX_Private/Database/Verification_admin_database.csv",ios::trunc);
     }
     fout_admin_database<<firstline<<"\n"<<secondline;
-    for(int j=0;j<i;j++){
-        if(j==inde) continue;
-        fout_admin_database<<"\n";
-        fout_admin_database<<whole_database[j];
+    for(int j=0;j<database.size();j++){
+        if(lineno==j) continue;
+        fout_admin_database<<"\n"<<database[j];
     }
     fout_admin_database.close();
     cout<<R"VoteX(<!DOCTYPE html>
