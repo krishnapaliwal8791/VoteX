@@ -308,7 +308,7 @@ body{
             <div class="card">
                 <h3>Admin List</h3>
                 <p>View all authorized administrators.</p>
-                <form action="/cgi-bin/VoteX/admin_list.cgi" method="get">
+                <form action="/cgi-bin/VoteX/admin_list.cgi" method="post">
                     <button>View List</button>
                 </form>
             </div>
@@ -316,7 +316,7 @@ body{
             <div class="card">
                 <h3>Confidential Settings</h3>
                 <p>Manage sensitive institute-level configurations.</p>
-                <form action="/cgi-bin/VoteX/confidential.cgi" method="post">
+                <form action="/cgi-bin/VoteX/confidential_settings_for_institute.cgi" method="post">
                     <button>Access</button>
                 </form>
             </div>
