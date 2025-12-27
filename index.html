@@ -343,11 +343,20 @@ footer{
       VoteX evolves by building and experimenting.
     </p>
 
-    <form>
-      <input placeholder="Your Name">
-      <input placeholder="Your Email">
-      <textarea rows="4" placeholder="Message"></textarea>
-      <button>Send Message</button>
+    <form
+      action="https://formspree.io/f/mlgejovb"
+      method="POST"
+    >
+      <label>
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <label>
+        Your message:
+        <textarea name="message"></textarea>
+      </label>
+      <!-- your other form fields go here -->
+      <button type="submit">Send</button>
     </form>
   </div>
 </section>
