@@ -1,4 +1,4 @@
-// Not 100% succeded
+// Not 100% succeded this core
 #include<iostream>
 #include<string>
 #include<fstream>
