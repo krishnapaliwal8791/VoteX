@@ -164,7 +164,7 @@ button:hover{
     <form action="/cgi-bin/VoteX/institute_login.cgi" method="post">
 
       <label>Institute Identifier</label>
-      <input type="text" name="institute_id" required>
+      <input type="text" name="institute_id" autocomplete="off" required>
 
       <label>Password</label>
       <input type="password" name="password" required>
@@ -175,7 +175,7 @@ button:hover{
       <input type="password" name="secret_key" required>
 
       <label>Security Verification Answer</label>
-      <input type="text" name="security_answer" required>
+      <input type="text" name="security_answer" autocomplete="off" required>
 
       <label>Dynamic Administrative PIN</label>
       <input type="password" name="daily_pin" required>
